@@ -55,5 +55,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.MapGet("/", () => "Family Tracker AI Backend is Running!");
 
 app.Run();
