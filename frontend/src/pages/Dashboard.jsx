@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Chatbot from "../components/Chatbot";
 
 export default function Dashboard() {
     const [activities, setActivities] = useState([]);
@@ -24,6 +25,7 @@ export default function Dashboard() {
                     <p className="text-sm text-gray-500">{a.imageUrl}</p>
                 </div>
             ))}
+            <Chatbot />
         </div>
     );
 }

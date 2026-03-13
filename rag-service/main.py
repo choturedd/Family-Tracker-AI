@@ -5,10 +5,19 @@ import os
 from dotenv import load_dotenv
 import uvicorn
 import requests
+from fastapi.middleware.cors import CORSMiddleware
 
 load_dotenv()
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 client = AzureOpenAI(
     api_key=os.getenv("AZURE_OPENAI_KEY"),
